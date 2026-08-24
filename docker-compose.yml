@@ -1,0 +1,15 @@
+services:
+  node1:
+    build: .
+    image: storj-flow
+    tty: true
+    volumes:
+      - /mnt/disk1/storagenode1/log:/log:ro
+    command: ["/log/node.log", "--title", "node1"]
+
+  node2:
+    image: storj-flow
+    tty: true
+    volumes:
+      - /mnt/disk1/storagenode2/log:/log:ro
+    command: ["/log/node.log", "--title", "node2"]
